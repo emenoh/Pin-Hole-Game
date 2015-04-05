@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>PinHole</title>
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+	<style> body { margin: 0; background: #333; } </style>
+	<script src="src/phaser.min.js"></script>
+	<script src="cordova-2.7.0.js"></script>
+	<script src="src/gyro.min.js"></script>
+	<script src="src/Boot.js"></script>
+	<script src="src/Preloader.js"></script>
+	<script src="src/MainMenu.js"></script>
+	<script src="src/MainMenu2.js"></script>
+	<script src="src/MainMenuEasy.js"></script>
+	<script src="src/MainMenuMedium.js"></script>
+	<script src="src/MainMenuHard.js"></script>
+	<script src="src/StoryHowto.js"></script>
+	<script src="src/StoryHowtoEasy.js"></script>
+	<script src="src/StoryHowtoMedium.js"></script>
+	<script src="src/StoryHowtoHard.js"></script>
+	<script src="src/GameOver.js"></script>
+	<script src="src/GameEasy.js"></script>
+	<script src="src/GameMedium.js"></script>
+	<script src="src/GameHard.js"></script>
+	
+</head>
+<body>
+<script>
+(function() {
+	var game = new Phaser.Game(320, 480, Phaser.AUTO, 'game');
+	game.state.add('Boot', Ball.Boot);
+	game.state.add('Preloader', Ball.Preloader);
+	game.state.add('MainMenu', Ball.MainMenu);
+	game.state.add('MainMenu2', Ball.MainMenu2);
+	game.state.add('MainMenuEasy', Ball.MainMenuEasy);
+	game.state.add('MainMenuMedium', Ball.MainMenuMedium);
+	game.state.add('MainMenuHard', Ball.MainMenuHard);
+	game.state.add('StoryHowto', Ball.StoryHowto);
+	game.state.add('StoryHowtoEasy', Ball.StoryHowtoEasy);
+	game.state.add('StoryHowtoMedium', Ball.StoryHowtoMedium);
+	game.state.add('StoryHowtoHard', Ball.StoryHowtoHard);
+	game.state.add('GameOver', Ball.GameOver);
+	//game.state.add('Game', Ball.Game);
+	game.state.add('GameMedium', Ball.GameMedium);
+	game.state.add('GameEasy', Ball.GameEasy);
+	game.state.add('GameHard', Ball.GameHard);
+	game.state.start('Boot');
+})();
+</script>
+</body>
+</html>
