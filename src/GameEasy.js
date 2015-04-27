@@ -298,8 +298,8 @@ Ball.GameEasy.prototype = {
 		var x = e.accelerationIncludingGravity.x;
 		var y = e.accelerationIncludingGravity.y;
 
-		ball.body.velocity.x += -x;
-		ball.body.velocity.y += y;
+		ball.body.velocity.x += x;
+		ball.body.velocity.y += -y;
 	}
 	/*handleOrientation: function(o){
 		gyro.startTracking(function(o) {
