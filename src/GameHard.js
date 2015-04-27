@@ -412,16 +412,16 @@ Ball.GameHard.prototype = {
 
 		var force = 10;
 		if(keys.left.isDown) {
-			ball.body.velocity.x -= force;
-		}
-		else if(keys.right.isDown) {
 			ball.body.velocity.x += force;
 		}
+		else if(keys.right.isDown) {
+			ball.body.velocity.x -= force;
+		}
 		if(keys.up.isDown) {
-			ball.body.velocity.y -= force;
+			ball.body.velocity.y += force;
 		}
 		else if(keys.down.isDown) {
-			ball.body.velocity.y += force;
+			ball.body.velocity.y -= force;
 		}
 
 		this.game.physics.collide(ball, walls, this.wallCollision, null, this);
@@ -452,9 +452,13 @@ Ball.GameHard.prototype = {
 		}
 	},
 	handleOrientation: function(e) {
-		var x = e.gamma; // range [-90,90]
-		var y = e.beta;  // range [-180,180]
-		ball.body.velocity.x += x/2;
-		ball.body.velocity.y += y;
+		//var x = e.gamma; // range [-90,90]
+		//var y = e.beta;  // range [-180,180]
+
+		var x = e.accelerationIncludingGravity.x;
+		var y = e.accelerationIncludingGravity.y;
+
+		ball.body.velocity.x += x;
+		ball.body.velocity.y += -y;
 	}
 };

@@ -253,16 +253,16 @@ Ball.GameEasy.prototype = {
 
 		var force = 10;
 		if(keys.left.isDown) {
-			ball.body.velocity.x -= force;
-		}
-		else if(keys.right.isDown) {
 			ball.body.velocity.x += force;
 		}
+		else if(keys.right.isDown) {
+			ball.body.velocity.x -= force;
+		}
 		if(keys.up.isDown) {
-			ball.body.velocity.y -= force;
+			ball.body.velocity.y += force;
 		}
 		else if(keys.down.isDown) {
-			ball.body.velocity.y += force;
+			ball.body.velocity.y -= force;
 		}
 
 		this.game.physics.collide(ball, walls, this.wallCollision, null, this);
@@ -298,8 +298,8 @@ Ball.GameEasy.prototype = {
 		var x = e.accelerationIncludingGravity.x;
 		var y = e.accelerationIncludingGravity.y;
 
-		ball.body.velocity.x += -x;
-		ball.body.velocity.y += y;
+		ball.body.velocity.x += x;
+		ball.body.velocity.y += -y;
 	}
 	/*handleOrientation: function(o){
 		gyro.startTracking(function(o) {
